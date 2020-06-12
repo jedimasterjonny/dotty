@@ -1,0 +1,6 @@
+[user]
+	name = jedimasterjonny
+	email = 46541898+jedimasterjonny@users.noreply.github.com
+	signingkey = B0A86459E4BBAC95
+[commit]
+	gpgsign = true

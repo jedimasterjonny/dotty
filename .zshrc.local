@@ -1,0 +1,12 @@
+if hash nvim 2>/dev/null; then
+    export EDITOR='nvim'
+else
+    export EDITOR='vim'
+fi
+
+export SSH_KEY_PATH="~/.ssh/id_ed25519"
+export GPG_TTY=$(tty)
+
+if [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
