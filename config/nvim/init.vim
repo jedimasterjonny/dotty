@@ -16,6 +16,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+" Powerline fonts on airline
+let g:airline_powerline_fonts = 1
+
 " FZF
 so /usr/share/doc/fzf/examples/fzf.vim
 nnoremap <silent> <leader><space> :Files<CR>
