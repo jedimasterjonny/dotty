@@ -20,7 +20,7 @@ call plug#end()
 let g:airline_powerline_fonts = 1
 
 " FZF
-so /usr/share/doc/fzf/examples/fzf.vim
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 nnoremap <silent> <leader><space> :Files<CR>
 
 " Sensible keys
