@@ -27,8 +27,30 @@ nnoremap <silent> <leader><space> :Files<CR>
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  Text, tab and indents
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Change invisible chars
 set listchars=eol:¬,tab:>.
+
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" Linebreak on 500 characters
+set lbr
+set tw=500
+
+set ai " Auto indent
+set si " Smart indent
+set wrap " Wrap lines
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Relative line numbering
 set number relativenumber
