@@ -17,7 +17,11 @@ Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " Powerline fonts on airline
-let g:airline_powerline_fonts = 1
+if has('macunix')
+	let g:airline_powerline_fonts = 0
+else
+	let g:airline_powerline_fonts = 1
+endif
 
 " FZF
 if has('macunix')
