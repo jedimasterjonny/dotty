@@ -20,7 +20,9 @@ call plug#end()
 let g:airline_powerline_fonts = 1
 
 " FZF
-if has('unix')
+if has('macunix')
+	set rtp+=/usr/local/opt/fzf
+elseif has('unix')
 	set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 endif
 nnoremap <silent> <leader><space> :Files<CR>
