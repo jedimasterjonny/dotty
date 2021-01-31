@@ -172,6 +172,11 @@ EOF
 
 # check for version/system
 # check for versions (compatibility reasons)
+function is51 () {
+    [[ $ZSH_VERSION == 5.<1->* ]] && return 0
+    return 1
+}
+
 function is4 () {
     [[ $ZSH_VERSION == <4->* ]] && return 0
     return 1
@@ -1645,7 +1650,13 @@ zrcautoload zed
 # else
 #    print 'Notice: no url-quote-magic available :('
 # fi
-alias url-quote='autoload -U url-quote-magic ; zle -N self-insert url-quote-magic'
+if is51 ; then
+  # url-quote doesn't work without bracketed-paste-magic since Zsh 5.1
+  alias url-quote='autoload -U bracketed-paste-magic url-quote-magic;
+                   zle -N bracketed-paste bracketed-paste-magic; zle -N self-insert url-quote-magic'
+else
+  alias url-quote='autoload -U url-quote-magic ; zle -N self-insert url-quote-magic'
+fi
 
 #m# k ESC-h Call \kbd{run-help} for the 1st word on the command line
 alias run-help >&/dev/null && unalias run-help
@@ -3569,6 +3580,11 @@ function simple-extract () {
                 USES_STDIN=true
                 USES_STDOUT=false
                 ;;
+            *tar.lrz)
+                DECOMP_CMD="lrzuntar"
+                USES_STDIN=false
+                USES_STDOUT=false
+                ;;
             *tar)
                 DECOMP_CMD="tar -xvf -"
                 USES_STDIN=true
@@ -3616,6 +3632,11 @@ function simple-extract () {
                 ;;
             *zst)
                 DECOMP_CMD="zstd -d -c -"
+                USES_STDIN=true
+                USES_STDOUT=true
+                ;;
+            *lrz)
+                DECOMP_CMD="lrunzip -"
                 USES_STDIN=true
                 USES_STDOUT=true
                 ;;
