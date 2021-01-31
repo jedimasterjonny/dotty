@@ -20,7 +20,9 @@ call plug#end()
 let g:airline_powerline_fonts = 1
 
 " FZF
-set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+if has('unix')
+	set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+endif
 nnoremap <silent> <leader><space> :Files<CR>
 
 " Sensible keys
