@@ -13,7 +13,7 @@ Plug 'w0rp/ale'
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'arcticicestudio/nord-vim'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " Powerline fonts on airline
@@ -25,7 +25,7 @@ endif
 
 " FZF
 if has('macunix')
-	set rtp+=/usr/local/opt/fzf
+	set rtp+=/opt/homebrew/opt/fzf
 elseif has('unix')
 	set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 endif
@@ -79,6 +79,3 @@ syntax on
 
 " Fiddle with the line number
 highlight CursorLineNr cterm=bold
-
-" Use the nord theme
-colorscheme nord
