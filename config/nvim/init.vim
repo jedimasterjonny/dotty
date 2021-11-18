@@ -27,7 +27,7 @@ endif
 if has('macunix')
 	set rtp+=/opt/homebrew/opt/fzf
 elseif has('unix')
-	set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+	so /usr/share/doc/fzf/examples/fzf.vim
 endif
 nnoremap <silent> <leader><space> :Files<CR>
 
