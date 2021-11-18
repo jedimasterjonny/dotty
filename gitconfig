@@ -1,11 +1,11 @@
 [user]
-	name = jedimasterjonny
-	email = 46541898+jedimasterjonny@users.noreply.github.com
-	signingkey = B0A86459E4BBAC95
+    name = jedimasterjonny
+    email = 46541898+jedimasterjonny@users.noreply.github.com
+    signingkey = B0A86459E4BBAC95
 [commit]
-	gpgsign = true
+    gpgsign = true
 [pull]
-	rebase = false
+    rebase = false
 
 [includeIf "gitdir:~/github/Cloud-Technology-Solutions/"]
     path = ~/.gitconfig-cts
