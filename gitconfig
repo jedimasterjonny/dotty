@@ -6,3 +6,6 @@
 	gpgsign = true
 [pull]
 	rebase = false
+
+[includeIf "gitdir:~/github/Cloud-Technology-Solutions/"]
+    path = ~/.gitconfig-cts
