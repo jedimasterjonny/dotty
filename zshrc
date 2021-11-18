@@ -1,11 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Add brew to the path
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jonny/.oh-my-zsh"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export ZSH="/Users/jonny/.oh-my-zsh"
+    # Add brew to the path
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    export ZSH="/home/jonny/.oh-my-zsh"
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
